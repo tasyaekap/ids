@@ -1,0 +1,202 @@
+
+var ids = "http://localhost:3333/showids"
+
+var last = "http://localhost:3333/showlat"
+
+
+   var opsi = [
+     { id:"HC", value:"HC"},
+     { id:"IT", value:"IT"}
+   ]
+   
+   var map = { hidden:true,
+ key:"AIzaSyDgLKFYNu6pg-cPOZ3KmQGXHHVhgSfouGI",
+ view:"google-map",
+ id:"map",
+ zoom:10,
+ center:[ -6.208763, 106.845599 ],
+ url:last
+}
+
+
+   var check_poin =  { view:"form", hidden:true, scroll:"auto" , id:"frm2", elements:[
+           {
+                     view:"combo", label:"Serial Number", name:"SrlNum1",  id:"SrlNum1", labelWidth:130,
+                     placeholder:"Type the Serial Number Here",
+                     options:{
+                       body:{
+                         url:ids
+                       }
+                     }
+                   },
+           { view:"text", label:"Address", name:"Address",id:"Address",on:{
+                 'onTimedKeyPress': maps
+               }, labelWidth:130 },
+            { view:"text", label:"Lat", name:"lat",id:"lat", labelWidth:130, hidden:true },
+            { view:"text", label:"lng", name:"lng",id:"lng", labelWidth:130, hidden:true },
+            { view:"button", value:"Check Point", click:save2  }
+   ]}
+   
+   
+   var form = { id:"frm",
+     rows:[
+       { type:"header", template:"Register " },
+       { view:"form",scroll:"auto" , id:"frm1", elements:[
+         { view:"combo", label:"Type Registration", name:"tyReg",  id:"tyReg", labelWidth:130, options:opsi },
+         { view:"text", label:"Part Number", name:"PrtNum",id:"PrtNum", labelWidth:130 },
+         { view:"text", label:"Serial Number", name:"SrlNum", id:"SrlNum", labelWidth:130 },
+         { view:"text", label:"Part Name", name:"PrtNm",id:"PrtNm", labelWidth:130 },
+         { view:"button",value:"klik", click:save, }, 
+       ]},{ 
+   view:"datatable", id:"tbl1", hidden:true,
+   columns:[
+       { id:"tyReg", header:"Type Registration", width:140},
+       { id:"PrtNum", header:"Part Number", width:120},
+       { id:"SrlNum", header:"Serial Number", width:120},
+       { id:"PrtNm", header:"Part Name", width:120},
+   ],
+   url:ids,
+   save:"rest->http://localhost:3333/saveids"
+}
+       
+     ]
+   }
+   
+     var menu_data = [
+ {id:"input", icon: "fas fa-tasks", value:" Input Form"},
+   {id: "check", icon: "fas fa-map-pin", value:"Check Point"},
+   {id: "maps", icon:"fas fa-map-marked-alt", value: " Maps"},
+];
+
+var dashboard = { 
+   rows: [ 
+     { view: "toolbar", padding:3, elements: [
+       { view: "icon", icon: "webix_icon fas fa-compass", click: function(){
+          $$("sidebar1").toggle();
+        }
+       },
+       { view: "label", label: "IDS Medical System"},
+       {},
+       { view:"button", align:"right", value:"Logout", click:logout, css:"webix_primary", inputWidth:90  }
+     ]
+     },
+     { cols:[
+       { id:"sidebar1",
+         view: "sidebar",
+         data: menu_data,
+        on:{
+         onItemClick: function(id){
+           var val = this.getItem(id).id;
+                       if (val == "input"){
+                         $$('frm').show();
+                         $$('map').hide();
+                         $$('frm2').hide()
+                         }
+                      else if (val == "check"){
+                           $$('frm').hide();
+                          $$('map').hide();
+                          $$('frm2').show()
+                           }
+                     else {
+                         $$('frm').hide();
+                           $$('map').show();
+                         $$('frm2').hide()
+                           }
+         }
+       }
+        
+       },
+       {  type:"space",
+ rows:[ 
+    {
+ padding:8,
+ id:"views",
+ cells:[{
+   rows:[
+   form, map, check_poin]
+ }]
+}
+ ]
+}
+     ]}
+   ]
+ }
+ webix.ready(function(){
+ 
+   webix.ui(dashboard);
+   
+   $$("map").attachEvent("onItemClick", function(id, marker){
+     
+     adr = this.getItem(id).Address;
+     sernum = this.getItem(id).value;
+     
+         
+         var contentString = '<p> Last Location: '+adr+' </p>' + '<p> Serial Number: '+sernum+' </p>'
+  
+         var infowindow = new google.maps.InfoWindow({
+           content: contentString
+         });
+        
+         marker.addListener("dblclick", function() {
+          infowindow.open(map, marker);
+        });
+       
+      
+      google.maps.event.addListener(marker, "click", function() {
+                infowindow.close();
+            });
+         
+     });
+ 
+ });
+
+ function round(value, decimals) {
+         return Number(Math.round(value +'e'+ decimals) +'e-'+ decimals).toFixed(decimals);
+   }
+
+ function save(){
+     var data = $$("frm1").getValues();
+       $$("tbl1").add(data);
+     webix.message("Data Tersimpan!")
+     $$('frm1').clear();
+   }
+
+
+
+   function maps() {
+           var data = $$("frm2").getValues();
+           var adr = (data.Address).replace(/ /g, '+')
+           var url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + adr + "&key=AIzaSyDgLKFYNu6pg-cPOZ3KmQGXHHVhgSfouGI"
+           webix.ajax().post('https://maps.googleapis.com/maps/api/geocode/json?address=' + adr + '&key=AIzaSyDgLKFYNu6pg-cPOZ3KmQGXHHVhgSfouGI').then(function(hasil){
+           hasil = (hasil.json()).results[0].geometry.location
+           lat = round(hasil.lat, 6)
+           lng = round(hasil.lng, 6)
+           $$("lat").setValue(lat)
+           $$("lng").setValue(lng)
+           }).fail(function(xhr){
+       var response = JSON.parse(xhr.response);
+       webix.message({type: 'error', text: response.error.message});
+   });
+}
+
+
+
+function save2(){
+     var value = $$("SrlNum1").getText()
+       $$("SrlNum1").setValue(value)
+ 
+     var data = $$("frm2").getValues()
+       console.log(data)
+ 
+     webix.ajax().post('http://localhost:3333/savenewids', data).then(function(respons){
+          webix.message("Data Tersimpan")
+   });
+     
+     $$("frm2").clear(); 
+}
+
+function logout(){
+	 webix.ajax().post('http://localhost:3333/logout').then(function(respons){
+          window.open("http://localhost:3333/", "_self")
+   });
+}
