@@ -1,4 +1,3 @@
-
 var ids = "http://localhost:3333/showids"
 
 var last = "http://localhost:3333/showlat"
@@ -19,7 +18,11 @@ var last = "http://localhost:3333/showlat"
 }
 
 
-   var check_poin =  { view:"form", hidden:true, scroll:"auto" , id:"frm2", elements:[
+   var check_poin =  { view:"form",  rules:{
+             "SrlNum1":webix.rules.isNotEmpty,
+     		 "Address":webix.rules.isNotEmpty,
+     		 "lat":webix.rules.isNotEmpty,
+     		 "lng":webix.rules.isNotEmpty,}, hidden:true, scroll:"auto" , id:"frm2", elements:[
            {
                      view:"combo", label:"Serial Number", name:"SrlNum1",  id:"SrlNum1", labelWidth:130,
                      placeholder:"Type the Serial Number Here",
@@ -41,7 +44,11 @@ var last = "http://localhost:3333/showlat"
    var form = { id:"frm",
      rows:[
        { type:"header", template:"Register " },
-       { view:"form",scroll:"auto" , id:"frm1", elements:[
+       { view:"form",scroll:"auto" , id:"frm1", rules:{
+             "tyReg":webix.rules.isNotEmpty,
+     		 "PrtNum":webix.rules.isNotEmpty,
+     		 "SrlNum":webix.rules.isNotEmpty,
+     		 "PrtNm":webix.rules.isNotEmpty,}, elements:[
          { view:"combo", label:"Type Registration", name:"tyReg",  id:"tyReg", labelWidth:130, options:opsi },
          { view:"text", label:"Part Number", name:"PrtNum",id:"PrtNum", labelWidth:130 },
          { view:"text", label:"Serial Number", name:"SrlNum", id:"SrlNum", labelWidth:130 },
@@ -155,10 +162,14 @@ var dashboard = {
    }
 
  function save(){
+   if($$("frm1").validate()){
      var data = $$("frm1").getValues();
        $$("tbl1").add(data);
      webix.message("Data Tersimpan!")
      $$('frm1').clear();
+      } else {
+    webix.alert("Perbaiki data yang telah diinput!");
+      }
    }
 
 
@@ -182,17 +193,22 @@ var dashboard = {
 
 
 function save2(){
+  if($$("frm2").validate()){
+     
      var value = $$("SrlNum1").getText()
        $$("SrlNum1").setValue(value)
  
      var data = $$("frm2").getValues()
-       console.log(data)
  
      webix.ajax().post('http://localhost:3333/savenewids', data).then(function(respons){
           webix.message("Data Tersimpan")
    });
      
      $$("frm2").clear(); 
+    
+     }else{
+       webix.alert("Perbaiki data yang telah diinput!");
+     }
 }
 
 function logout(){
