@@ -22,7 +22,7 @@ class IdController {
      */
     async index({ request, response, view }) {
         let ids = await Database
-            .raw('SELECT id, SrlNum as value FROM ids')
+            .raw('SELECT id, tyReg, SrlNum as value FROM ids')
         var data = ids[0]
 
         return response.json(data)
@@ -119,7 +119,10 @@ class IdController {
         const post = new Post()
 
         post.SrlNum = request.input('SrlNum1')
+        post.tyReg = request.input('tyReg1')
         post.Address = request.input('Address')
+        post.City = request.input('City')
+        post.tlc = request.input('tlc')
         post.lat = request.input('lat')
         post.lng = request.input('lng')
 
@@ -130,6 +133,46 @@ class IdController {
 
     async hosted({ request, response, view }) {
         return view.render('hosted');
+    }
+
+    async showtlc({ params, request, response, view }) {
+        let hasil = await Database
+            .raw('SELECT tlTlcCode FROM cltbtlcs WHERE tlName = ?', params.tlName);
+        return response.json(hasil);
+    }
+
+    async showtyReg({ params, request, response, view }) {
+        let records = await Database
+            .raw('SELECT tyReg FROM ids WHERE SrlNum = ?', params.SrlNum);
+        return response.json(records);
+    }
+
+    async showgraph1({ params, response }) {
+        let value = await Database
+            .raw('SELECT tlc, COUNT(id) AS jumlah FROM positions WHERE created_at BETWEEN "' + params.date + ' 00:00:00" AND "' + params.date + ' 23:58:00" GROUP BY tlc LIMIT 10')
+        var datee = value[0]
+        return response.json(datee);
+    }
+
+    async showgraph2({ response }) {
+        let value = await Database
+            .raw('SELECT * from (SELECT COUNT(case when tyReg = "HC" THEN 1 ELSE null END) \
+            AS HC \
+            ,  COUNT(case when tyReg = "IT"  THEN 1 ELSE null END) AS IT, tlc from positions\
+            group by tlc ) AS test WHERE IT AND HC IS NOT NULL LIMIT 10')
+
+        var record = value[0]
+        return response.json(record)
+    }
+
+    async showgraphdef({ response }) {
+        var d = new Date();
+        var curtime = (d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate())
+        let value1 = await Database
+            .raw('SELECT tlc, COUNT(id) AS jumlah FROM positions WHERE created_at BETWEEN "' + curtime + ' 00:00:00" AND "' + curtime + ' 23:58:00" GROUP BY tlc LIMIT 10')
+        var dateee = value1[0]
+        return response.json(dateee);
+
     }
 
 }

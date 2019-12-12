@@ -1,6 +1,117 @@
 var ids = "http://localhost:3333/showids"
-
 var last = "http://localhost:3333/showlat"
+var myformat = webix.Date.dateToStr("%Y-%m-%d");
+var showgrap1 = "http://localhost:3333/showgrapdef"
+var showgraph2 = "http://localhost:3333/showgrap2"
+
+var calendar = {
+    id:"cal1",
+    width:350,
+    height:290,
+    weekHeader:true,
+    date:new Date(),
+    view:"calendar",
+    events:webix.Date.isHoliday,
+    timepicker: true,
+    icons: true
+};
+var chart1 = {rows:[
+  { type:"header", template:"Persebaran Hardcase dan item berdasarkan kota" },
+ {
+  view:"chart",
+  autowidth:true,
+  height:400,
+  type:"line",
+  
+  xAxis:{
+    template:"'#tlc#"
+  },
+  yAxis:{
+    start:0,
+    step:1,
+    end: 10
+  },
+  legend:{
+    values:[{text:"Hardcase",color:"#1293f8"},{text:"Item",color:"#66cc00"}],
+    align:"center",
+    valign:"bottom",
+    layout:"x",
+    width: 100,
+    margin: 8
+  },
+  series:[
+    {
+      value:"#HC#",
+      item:{
+        borderColor: "#1293f8",
+        color: "#ffffff"
+      },
+      line:{
+        color:"#1293f8",
+        width:3
+      },
+      tooltip:{
+        template:"#sales#"
+      }
+    },
+    {
+      value:"#IT#",
+      item:{
+        borderColor: "#66cc00",
+        color: "#ffffff"
+      },
+      line:{
+        color:"#66cc00",
+        width:3
+      },
+      tooltip:{
+        template:"#IT#"
+      }
+    }
+  ],
+  url: showgraph2
+}
+]}
+
+
+var chart2 = {rows:[
+  { type:"header", template:"Transaksi perhari berdasarkan kota" },
+ {
+  id:"chart2",
+  view:"chart",
+  autowidth:true,
+  autoheight:true,
+  type:"line",
+  
+  xAxis:{
+    template:"'#tlc#"
+  },
+  yAxis:{
+    start:0,
+    step:10,
+    end: 100
+  },
+  series:[
+    
+    {
+      value:"#jumlah#",
+      item:{
+        borderColor: "#66cc00",
+        color: "#ffffff"
+      },
+      line:{
+        color:"#66cc00",
+        width:3
+      },
+      tooltip:{
+        template:"#sales2#"
+      }
+    }
+  ],
+  url : showgrap1
+}
+]}
+
 
 
    var opsi = [
@@ -8,14 +119,32 @@ var last = "http://localhost:3333/showlat"
      { id:"IT", value:"IT"}
    ]
    
-   var map = { hidden:true,
+   var map = { 
  key:"AIzaSyDgLKFYNu6pg-cPOZ3KmQGXHHVhgSfouGI",
  view:"google-map",
  id:"map",
  zoom:10,
+ height:500,
  center:[ -6.208763, 106.845599 ],
  url:last
 }
+
+var layout = {id:"lay1", hidden:true, autowidth:true, scroll: "y",
+  rows:[
+    chart1, {css:"myClass",height:12},
+    {cols:[
+    	chart2, {css:"myClass", width:9}, calendar,
+    ]},  {css:"myClass", height:12}, 
+    map
+  ]}
+
+var dashfin = {
+    view:"scrollview",
+    id:"verses",
+    scroll:"y", // vertical scrolling
+    body:layout
+}
+
 
 
    var check_poin =  { view:"form",  rules:{
@@ -32,16 +161,19 @@ var last = "http://localhost:3333/showlat"
                        }
                      }
                    },
-           { view:"text", label:"Address", name:"Address",id:"Address",on:{
+            { view:"text", label:"tyReg", name:"tyReg1",id:"tyReg1", labelWidth:130},
+           { view:"text", label:"Address", name:"Address",id:"Address", labelWidth:130 },
+            { view:"text", label:"City", name:"City",id:"City",on:{
                  'onTimedKeyPress': maps
-               }, labelWidth:130 },
-            { view:"text", label:"Lat", name:"lat",id:"lat", labelWidth:130, hidden:true },
+               }, labelWidth:130, },
+            { view:"text", label:"tlc", name:"tlc",id:"tlc", labelWidth:130, hidden:true},
+            { view:"text", label:"Lat", name:"lat",id:"lat", labelWidth:130,hidden:true },
             { view:"text", label:"lng", name:"lng",id:"lng", labelWidth:130, hidden:true },
             { view:"button", value:"Check Point", click:save2  }
    ]}
    
    
-   var form = { id:"frm",
+   var form = { id:"frm", hidden:true,
      rows:[
        { type:"header", template:"Register " },
        { view:"form",scroll:"auto" , id:"frm1", rules:{
@@ -70,9 +202,9 @@ var last = "http://localhost:3333/showlat"
    }
    
      var menu_data = [
- {id:"input", icon: "fas fa-tasks", value:" Input Form"},
+   {id:"dashb", icon: "fas fa-tachometer-alt", value:" Dashboard"},
+   {id:"input", icon: "fas fa-tasks", value:" Input Form"},
    {id: "check", icon: "fas fa-map-pin", value:"Check Point"},
-   {id: "maps", icon:"fas fa-map-marked-alt", value: " Maps"},
 ];
 
 var dashboard = { 
@@ -82,7 +214,7 @@ var dashboard = {
           $$("sidebar1").toggle();
         }
        },
-       { view: "label", label: "IDS Medical System"},
+       {view:"label", label:"<img src='logoids.png' style='height:29px'>"},
        {},
        { view:"button", align:"right", value:"Logout", click:logout, css:"webix_primary", inputWidth:90  }
      ]
@@ -94,33 +226,33 @@ var dashboard = {
         on:{
          onItemClick: function(id){
            var val = this.getItem(id).id;
-                       if (val == "input"){
-                         $$('frm').show();
-                         $$('map').hide();
+           				if (val == "dashb"){
+                         $$('verses').show();
+                         $$('frm').hide();
                          $$('frm2').hide()
                          }
-                      else if (val == "check"){
-                           $$('frm').hide();
-                          $$('map').hide();
-                          $$('frm2').show()
-                           }
-                     else {
-                         $$('frm').hide();
-                           $$('map').show();
+                      else if (val == "input"){
+                         $$('verses').hide();
+                         $$('frm').show();
                          $$('frm2').hide()
+                         }
+                      else{
+                           $$('verses').hide();
+                           $$('frm').hide();
+                           $$('frm2').show()
                            }
          }
        }
         
        },
-       {  type:"space",
- rows:[ 
+       { scroll:true,  type:"space",
+ rows:[
     {
  padding:8,
  id:"views",
  cells:[{
    rows:[
-   form, map, check_poin]
+   dashfin, form, check_poin]
  }]
 }
  ]
@@ -129,8 +261,30 @@ var dashboard = {
    ]
  }
  webix.ready(function(){
+   
  
    webix.ui(dashboard);
+   
+ $$("cal1").attachEvent("onDateSelect", function(){
+ $$("chart2").clearAll()
+ var reqdate = myformat(this.getSelectedDate())
+ webix.ajax().get('http://localhost:3333/showgrap/' + reqdate).then(function(dataa){
+     var datafin = dataa.json()
+     $$("chart2").define("data", datafin)
+     console.log(datafin)
+ });
+
+})
+   $$("SrlNum1").attachEvent("onChange", function(){
+    var data = $$("SrlNum1").getText();
+    webix.ajax().get("http://localhost:3333/showtyReg/" + data ).then(function(rec){
+      			rec = rec.json()
+      			reco = rec[0][0].tyReg
+                console.log(reco)
+                $$("tyReg1").setValue(reco);
+            });
+   hasil = hasil[0][0].tlTlcCode
+   })
    
    $$("map").attachEvent("onItemClick", function(id, marker){
      
@@ -177,8 +331,14 @@ var dashboard = {
    function maps() {
            var data = $$("frm2").getValues();
            var adr = (data.Address).replace(/ /g, '+')
-           var url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + adr + "&key=AIzaSyDgLKFYNu6pg-cPOZ3KmQGXHHVhgSfouGI"
-           webix.ajax().post('https://maps.googleapis.com/maps/api/geocode/json?address=' + adr + '&key=AIzaSyDgLKFYNu6pg-cPOZ3KmQGXHHVhgSfouGI').then(function(hasil){
+           var cit = data.City
+           webix.ajax().get("http://localhost:3333/kota/" + cit ).then(function(data){
+                hasil = data.json();
+                hasil = hasil[0][0].tlTlcCode
+                $$("tlc").setValue(hasil);
+            });
+           var url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + adr + ",+" + cit + "&key=AIzaSyDgLKFYNu6pg-cPOZ3KmQGXHHVhgSfouGI"
+           webix.ajax().post('https://maps.googleapis.com/maps/api/geocode/json?address=' + adr + ',+' + cit + '&key=AIzaSyDgLKFYNu6pg-cPOZ3KmQGXHHVhgSfouGI').then(function(hasil){
            hasil = (hasil.json()).results[0].geometry.location
            lat = round(hasil.lat, 6)
            lng = round(hasil.lng, 6)
@@ -195,10 +355,12 @@ var dashboard = {
 function save2(){
   if($$("frm2").validate()){
      
-     var value = $$("SrlNum1").getText()
-       $$("SrlNum1").setValue(value)
+    var value = $$("SrlNum1").getText()
+    $$("SrlNum1").setValue(value)
+     
  
      var data = $$("frm2").getValues()
+     console.log(data)
  
      webix.ajax().post('http://localhost:3333/savenewids', data).then(function(respons){
           webix.message("Data Tersimpan")

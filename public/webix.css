@@ -1,5 +1,5 @@
 .webix_view {
-  font-family: Helvetica, Verdana;
+  font-family: Roboto, sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #475466;
@@ -142,16 +142,16 @@ body.webix_full_screen {
   background-color: #ffffff;
 }
 .webix_header {
-  font-family: Helvetica, Verdana;
-  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
   font-weight: 500;
   color: #475466;
   letter-spacing: 0px;
   line-height: 42px;
 }
 .webix_header .webix_el_label .webix_el_box {
-  font-family: Helvetica, Verdana;
-  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
   font-weight: 500;
   color: #475466;
   letter-spacing: 0px;
@@ -397,8 +397,8 @@ body.webix_full_screen {
   color: #ffffff;
 }
 .webix_header .webix_el_label .webix_el_box {
-  font-family: Helvetica, Verdana;
-  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
   font-weight: 500;
   color: #475466;
   letter-spacing: 0px;
@@ -778,8 +778,8 @@ button,
   border-bottom: 1px solid #dadee0;
   position: relative;
   z-index: 2;
-  font-family: Helvetica, Verdana;
-  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
   font-weight: 500;
   color: #475466;
   letter-spacing: 0px;
@@ -791,8 +791,8 @@ button,
   color: #ffffff;
 }
 .webix_accordionitem_header .webix_el_label .webix_el_box {
-  font-family: Helvetica, Verdana;
-  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
   font-weight: 500;
   color: #475466;
   letter-spacing: 0px;
@@ -1268,8 +1268,8 @@ button,
 .webix_group_back.webix_selected {
   position: relative;
   background: #f4f5f9;
-  font-family: Helvetica, Verdana;
-  font-size: 14px;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
   font-weight: 500;
   color: #313131;
   letter-spacing: 0.2px;
@@ -1380,7 +1380,7 @@ button,
 .webix_pager_item .webix_icon,
 .webix_pager_item_selected .webix_icon {
   line-height: 0;
-  font-size: 14px;
+  font-size: 16px;
 }
 .webix_pager_item {
   background: #f4f5f9;
@@ -1502,7 +1502,7 @@ button,
 /*chart container*/
 .webix_chart {
   position: relative;
-  font-family: Helvetica, Verdana;
+  font-family: Roboto, sans-serif;
   font-size: 13px;
   color: #475466;
   overflow: hidden;
@@ -1637,7 +1637,7 @@ button,
   cursor: w-resize;
 }
 .webix_view {
-  font-family: Helvetica, Verdana;
+  font-family: Roboto, sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #475466;
@@ -1780,16 +1780,16 @@ body.webix_full_screen {
   background-color: #ffffff;
 }
 .webix_header {
-  font-family: Helvetica, Verdana;
-  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
   font-weight: 500;
   color: #475466;
   letter-spacing: 0px;
   line-height: 42px;
 }
 .webix_header .webix_el_label .webix_el_box {
-  font-family: Helvetica, Verdana;
-  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
   font-weight: 500;
   color: #475466;
   letter-spacing: 0px;
@@ -2035,8 +2035,8 @@ body.webix_full_screen {
   color: #ffffff;
 }
 .webix_header .webix_el_label .webix_el_box {
-  font-family: Helvetica, Verdana;
-  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
   font-weight: 500;
   color: #475466;
   letter-spacing: 0px;
@@ -2544,7 +2544,7 @@ button,
 .webix_pager_item .webix_icon,
 .webix_pager_item_selected .webix_icon {
   line-height: 0;
-  font-size: 14px;
+  font-size: 16px;
 }
 .webix_pager_item {
   background: #f4f5f9;
@@ -2610,7 +2610,7 @@ button,
   margin: 0;
   border: 1px solid #ffd700;
   height: 100%;
-  font-family: Helvetica, Verdana;
+  font-family: Roboto, sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #475466;
@@ -2647,7 +2647,7 @@ button,
 }
 .webix_message {
   min-width: 120px;
-  font-family: Helvetica, Verdana;
+  font-family: Roboto, sans-serif;
   z-index: 10000;
   overflow: hidden;
   margin: 4px 4px 12px;
@@ -2681,7 +2681,7 @@ button,
   position: fixed;
   background-color: #ffffff;
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1), 0 1px 7px 0 rgba(0, 0, 0, 0.1);
-  font-family: Helvetica, Verdana;
+  font-family: Roboto, sans-serif;
   z-index: 20000;
   border-radius: 0px;
   border: 1px solid #dadee0;
@@ -2728,9 +2728,9 @@ div.webix_modal_cover {
 }
 /*Skin section*/
 .webix_popup_button {
-  font-size: 14px;
-  font-family: Helvetica, Verdana;
   font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
   font-weight: 500;
   letter-spacing: 0px;
   background: #f4f5f9;
@@ -2747,8 +2747,8 @@ div.webix_modal_cover {
   background-color: #daddeb;
 }
 .webix_popup_button.confirm {
-  font-family: Helvetica, Verdana;
-  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
   font-weight: 500;
   color: #1ca1c1;
   letter-spacing: 0px;
@@ -2769,7 +2769,7 @@ div.webix_modal_cover {
   color: #475466;
   line-height: 20px;
   padding: 20px 16px 12px 16px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
 }
 .webix_popup_title + div.webix_popup_text {
@@ -2779,7 +2779,7 @@ div.webix_modal_cover {
 .webix_popup_text {
   overflow: hidden;
   padding: 24px 16px 0px 16px;
-  font-size: 14px;
+  font-size: 16px;
   color: #475466;
   min-height: 20px;
   line-height: 20px;
@@ -2803,7 +2803,7 @@ div.webix_modal_cover {
   box-shadow: inset 0 4px #ff5c4c;
 }
 .webix_message {
-  font-size: 14px;
+  font-size: 16px;
   color: #475466;
   box-shadow: 0 1px 14px 0 rgba(0, 0, 0, 0.12), 0 4px 10px 0 rgba(0, 0, 0, 0.1);
   line-height: 20px;
@@ -2833,7 +2833,7 @@ div.webix_modal_cover {
   position: absolute;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
-  font-family: Helvetica, Verdana;
+  font-family: Roboto, sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #475466;
@@ -3007,7 +3007,7 @@ div.webix_modal_cover {
   box-sizing: border-box;
 }
 .webix_table_cell {
-  font-size: 14px;
+  font-size: 16px;
 }
 .webix_block_selection {
   position: absolute;
@@ -3047,7 +3047,7 @@ div.webix_modal_cover {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: Helvetica, Verdana;
+  font-family: Roboto, sans-serif;
 }
 .webix_richfilter {
   margin-top: 1px;
@@ -3061,8 +3061,8 @@ div.webix_modal_cover {
 .webix_ss_header TD,
 .webix_ss_vscroll_header,
 .webix_dd_drag_column {
-  font-family: Helvetica, Verdana;
-  font-size: 14px;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
   font-weight: 500;
   color: #313131;
   letter-spacing: 0.2px;
@@ -3495,7 +3495,7 @@ div.webix_modal_cover {
   margin-top: 0 !important;
 }
 .webix_measure_size {
-  font-family: Helvetica, Verdana;
+  font-family: Roboto, sans-serif;
 }
 .webix_measure_size input,
 .webix_measure_size textarea,
@@ -3826,8 +3826,8 @@ div.webix_modal_cover {
   font-size: 12px;
   border-radius: 2px;
   border: 1px solid #dadee0;
-  font-family: Helvetica, Verdana;
-  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
   font-weight: 500;
   letter-spacing: 0px;
   outline: none;
@@ -3873,8 +3873,8 @@ div.webix_modal_cover {
   border-right: 1px solid #edeff0;
 }
 .webix_property_label_line {
-  font-family: Helvetica, Verdana;
-  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
   font-weight: 500;
   color: #475466;
   letter-spacing: 0px;
@@ -3884,8 +3884,8 @@ div.webix_modal_cover {
   line-height: 28px;
 }
 .webix_property_label_line .webix_el_label .webix_el_box {
-  font-family: Helvetica, Verdana;
-  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
   font-weight: 500;
   color: #475466;
   letter-spacing: 0px;
@@ -4131,8 +4131,8 @@ div.webix_modal_cover {
   color: #ffffff;
 }
 .webix_property_label_line .webix_el_label .webix_el_box {
-  font-family: Helvetica, Verdana;
-  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
   font-weight: 500;
   color: #475466;
   letter-spacing: 0px;
@@ -4411,7 +4411,7 @@ div.webix_modal_cover {
   background-color: #ffffff;
   padding: 5px 10px;
   border: 1px solid #dadee0;
-  font-family: Helvetica, Verdana;
+  font-family: Roboto, sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #475466;
@@ -4574,7 +4574,7 @@ div.webix_modal_cover {
 }
 .webix_message {
   min-width: 120px;
-  font-family: Helvetica, Verdana;
+  font-family: Roboto, sans-serif;
   z-index: 10000;
   overflow: hidden;
   margin: 4px 4px 12px;
@@ -4608,7 +4608,7 @@ div.webix_modal_cover {
   position: fixed;
   background-color: #ffffff;
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1), 0 1px 7px 0 rgba(0, 0, 0, 0.1);
-  font-family: Helvetica, Verdana;
+  font-family: Roboto, sans-serif;
   z-index: 20000;
   border-radius: 0px;
   border: 1px solid #dadee0;
@@ -4655,9 +4655,9 @@ div.webix_modal_cover {
 }
 /*Skin section*/
 .webix_popup_button {
-  font-size: 14px;
-  font-family: Helvetica, Verdana;
   font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
   font-weight: 500;
   letter-spacing: 0px;
   background: #f4f5f9;
@@ -4674,8 +4674,8 @@ div.webix_modal_cover {
   background-color: #daddeb;
 }
 .webix_popup_button.confirm {
-  font-family: Helvetica, Verdana;
-  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
   font-weight: 500;
   color: #1ca1c1;
   letter-spacing: 0px;
@@ -4696,7 +4696,7 @@ div.webix_modal_cover {
   color: #475466;
   line-height: 20px;
   padding: 20px 16px 12px 16px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
 }
 .webix_popup_title + div.webix_popup_text {
@@ -4706,7 +4706,7 @@ div.webix_modal_cover {
 .webix_popup_text {
   overflow: hidden;
   padding: 24px 16px 0px 16px;
-  font-size: 14px;
+  font-size: 16px;
   color: #475466;
   min-height: 20px;
   line-height: 20px;
@@ -4730,7 +4730,7 @@ div.webix_modal_cover {
   box-shadow: inset 0 4px #ff5c4c;
 }
 .webix_message {
-  font-size: 14px;
+  font-size: 16px;
   color: #475466;
   box-shadow: 0 1px 14px 0 rgba(0, 0, 0, 0.12), 0 4px 10px 0 rgba(0, 0, 0, 0.1);
   line-height: 20px;
@@ -4864,7 +4864,7 @@ div.webix_modal_cover {
   position: absolute;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
-  font-family: Helvetica, Verdana;
+  font-family: Roboto, sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #475466;
@@ -5150,8 +5150,8 @@ div.webix_modal_cover {
   height: 100%;
   width: 100%;
   cursor: pointer;
-  font-family: Helvetica, Verdana;
-  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
   font-weight: 500;
   color: #1ca1c1;
   letter-spacing: 0px;
@@ -5253,8 +5253,8 @@ div.webix_modal_cover {
   padding-top: 1px;
   padding-left: 0;
   padding-right: 9px;
-  font-family: Helvetica, Verdana;
-  font-size: 14px;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
   font-weight: 500;
   color: #313131;
   letter-spacing: 0.2px;
@@ -5276,7 +5276,7 @@ div.webix_modal_cover {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: Helvetica, Verdana;
+  font-family: Roboto, sans-serif;
 }
 .webix_el_box {
   -moz-box-sizing: border-box;
@@ -5285,24 +5285,24 @@ div.webix_modal_cover {
   padding: 3px 2px;
   height: 100%;
   width: 100%;
-  font-size: 14px;
+  font-size: 16px;
   overflow: hidden;
 }
 .webixtoolbarlabel {
-  font-size: 16px;
+  font-size: 18px;
 }
 .webix_el_text input,
 .webix_el_search input,
 .webix_el_combo input,
 .webix_el_datepicker input,
 .webix_el_colorpicker input {
-  font-size: 14px;
+  font-size: 16px;
   height: 100%;
   padding: 0px 12px;
   border: 1px solid #dadee0;
   color: #475466;
   background: #ffffff;
-  font-family: Helvetica, Verdana;
+  font-family: Roboto, sans-serif;
   border-color: #ccd7e6;
   /*.altBackColor;
 	.altBackBorderColor;*/
@@ -5315,7 +5315,7 @@ div.webix_modal_cover {
 .webix_label_right {
   color: #475466;
   text-transform: none;
-  font-size: 14px;
+  font-size: 16px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -5335,7 +5335,7 @@ div.webix_modal_cover {
   padding-bottom: 0px;
 }
 .webix_inp_bottom_label {
-  font-size: 12px;
+  font-size: 14px;
   color: #516075;
 }
 .webix_label_right {
@@ -5353,8 +5353,8 @@ div.webix_modal_cover {
 }
 .webix_el_select select {
   height: 100%;
-  font-size: 14px;
-  font-family: Helvetica, Verdana;
+  font-size: 16px;
+  font-family: Roboto, sans-serif;
   border: 1px solid #dadee0;
 }
 body:not(:-moz-handler-blocked) .webix_el_select select {
@@ -5376,7 +5376,7 @@ body:not(:-moz-handler-blocked) .webix_el_select select {
   vertical-align: top;
 }
 .webix_inp_counter_value {
-  font-size: 14px;
+  font-size: 16px;
   width: 50px;
   color: #475466;
   text-align: center;
@@ -5447,13 +5447,13 @@ body:not(:-moz-handler-blocked) .webix_el_select select {
   padding: 5px;
   color: #475466;
   resize: none;
-  font-size: 14px;
-  font-family: Helvetica, Verdana;
+  font-size: 16px;
+  font-family: Roboto, sans-serif;
   padding-left: 12px;
   padding-right: 12px;
 }
 .webix_el_textarea .webix_inp_label {
-  padding-top: 10px;
+  padding-top: 9px;
 }
 .webix_segment_0,
 .webix_segment_1 {
@@ -5509,8 +5509,8 @@ body:not(:-moz-handler-blocked) .webix_el_select select {
 .webix_segment_1,
 .webix_segment_N {
   -webkit-appearance: none;
-  font-family: Helvetica, Verdana;
-  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
   font-weight: 500;
   letter-spacing: 0px;
   outline: none;
@@ -5606,7 +5606,7 @@ body:not(:-moz-handler-blocked) .webix_el_select select {
 .webix_el_datepicker,
 .webix_el_colorpicker,
 .webix_el_search {
-  font-size: 14px;
+  font-size: 16px;
 }
 .webix_el_combo .webix_el_box,
 .webix_el_richselect .webix_el_box,
@@ -5629,7 +5629,7 @@ body:not(:-moz-handler-blocked) .webix_el_select select {
   color: #475466;
   padding-right: 24px;
   background: #ffffff;
-  font-family: Helvetica, Verdana;
+  font-family: Roboto, sans-serif;
   border-color: #ccd7e6;
   /*.altBackColor;
 	.altBackBorderColor;*/
@@ -5664,7 +5664,7 @@ body:not(:-moz-handler-blocked) .webix_el_select select {
 }
 .webix_el_radio .webix_inp_label {
   line-height: normal !important;
-  padding-top: 7px;
+  padding-top: 6px;
 }
 .webix_inp_radio_border input,
 .webix_el_checkbox input {
@@ -5718,7 +5718,7 @@ textarea.webix_invalid {
   border-color: #fea5a8;
 }
 .webix_invalid .webix_inp_bottom_label {
-  font-size: 12px;
+  font-size: 14px;
   color: #fd595f;
 }
 .webix_el_colorpicker .webix_input_icon {
@@ -5793,10 +5793,10 @@ legend.webix_required:after,
   border: 0;
   float: left;
   vertical-align: middle;
-  font-size: 14px;
+  font-size: 16px;
   padding: 0px;
   color: #475466;
-  font-family: Helvetica, Verdana;
+  font-family: Roboto, sans-serif;
   margin-left: 12px;
 }
 .webix_el_text .webix_multicombo_input:focus {
@@ -6038,7 +6038,7 @@ legend.webix_required:after,
   border-left: 0px;
   background: #1ca1c1;
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
 }
 .webix_menu-x .webix_list_item .webix_submenu_icon:before {
   content: '\F001';
@@ -6119,8 +6119,8 @@ legend.webix_required:after,
 }
 /* Toolbar */
 .webix_toolbar.webix_layout_subbar .webix_el_label .webix_el_box {
-  font-family: Helvetica, Verdana;
-  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
   font-weight: 500;
   color: #475466;
   letter-spacing: 0px;
@@ -6446,7 +6446,7 @@ legend.webix_required:after,
 }
 .webix_forminput_label {
   color: #475466;
-  font-family: Helvetica, Verdana;
+  font-family: Roboto, sans-serif;
   float: left;
   line-height: 32px;
   padding: 3px 2px;
@@ -7003,7 +7003,7 @@ legend.webix_forminput_label_top {
   position: relative;
 }
 .webix_barcode .webix_canvas_text {
-  font-size: 14px;
+  font-size: 16px;
   padding: 0 2px;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -7309,8 +7309,8 @@ span.webix_sidebar_dir_icon {
   border-radius: 2px;
   border: 1px solid #dadee0;
   cursor: pointer;
-  font-size: 14px;
-  font-family: Helvetica, Verdana;
+  font-size: 16px;
+  font-family: Roboto, sans-serif;
   background-color: #f4f5f9;
 }
 .webix_dbllist .dbllist_button .webix_icon {
@@ -7453,8 +7453,8 @@ body.webix_print {
   }
   .webix_table_print .webix_header_cell {
     display: table-cell;
-    font-family: Helvetica, Verdana;
-    font-size: 14px;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
     font-weight: 500;
     color: #313131;
     letter-spacing: 0.2px;
@@ -7587,22 +7587,22 @@ body.webix_print {
   font-weight: 500;
 }
 .mainFont {
-  font-family: Helvetica, Verdana;
+  font-family: Roboto, sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #475466;
   letter-spacing: 0.2px;
 }
 .buttonFont {
-  font-family: Helvetica, Verdana;
-  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
   font-weight: 500;
   color: #1ca1c1;
   letter-spacing: 0px;
 }
 .barFont {
-  font-family: Helvetica, Verdana;
-  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
   font-weight: 500;
   color: #475466;
   letter-spacing: 0px;
@@ -7611,8 +7611,8 @@ body.webix_print {
   background: #edeff5;
 }
 /*[L]*//*[L]*/.layoutBarBG .webix_el_label .webix_el_box {
-  font-family: Helvetica, Verdana;
-  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
   font-weight: 500;
   color: #475466;
   letter-spacing: 0px;
@@ -7855,8 +7855,8 @@ body.webix_print {
   background-color: transparent;
 }
 .webix_toolbar .webix_el_label .webix_el_box {
-  font-family: Helvetica, Verdana;
-  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
   font-weight: 500;
   color: #475466;
   letter-spacing: 0px;
@@ -8263,8 +8263,8 @@ body.webix_print {
   border-radius: 0;
 }
 .dataHeaderFont {
-  font-family: Helvetica, Verdana;
-  font-size: 14px;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
   font-weight: 500;
   color: #313131;
   letter-spacing: 0.2px;
@@ -8341,8 +8341,8 @@ body.webix_print {
 }
 .webix_dtable .webix_ss_footer TD,
 .webix_dtable .webix_ss_vscroll_footer {
-  font-family: Helvetica, Verdana;
-  font-size: 14px;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
   font-weight: 500;
   color: #313131;
   letter-spacing: 0.2px;
@@ -8415,8 +8415,8 @@ body.webix_print {
   border-color: #5ccce7;
 }
 .webix_view .webix_pager_item {
-  font-family: Helvetica, Verdana;
-  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
   font-weight: 500;
   letter-spacing: 0px;
   outline: none;
@@ -8433,8 +8433,8 @@ body.webix_print {
   background-color: #daddeb;
 }
 .webix_view .webix_pager_item_selected {
-  font-family: Helvetica, Verdana;
-  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
   font-weight: 500;
   color: #1ca1c1;
   letter-spacing: 0px;
@@ -8464,8 +8464,8 @@ body.webix_print {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   background: #f4f5f9;
-  font-family: Helvetica, Verdana;
-  font-size: 14px;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
   font-weight: 500;
   color: #313131;
   letter-spacing: 0.2px;
@@ -8708,15 +8708,15 @@ body.webix_print {
 }
 .webix_checksuggest_select_all .webix_label_right {
   text-align: center;
-  font-size: 16px;
+  font-size: 18px;
   color: #1ca1c1;
 }
 .webix_checksuggest_select_all.webix_el_checkbox .webix_label_right {
   padding-top: 5px;
 }
 .buttonStyle {
-  font-family: Helvetica, Verdana;
-  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
   font-weight: 500;
   color: #1ca1c1;
   letter-spacing: 0px;
@@ -8728,14 +8728,14 @@ body.webix_print {
 div.webix_inp_static,
 .webix_el_textarea textarea {
   background: #ffffff;
-  font-family: Helvetica, Verdana;
+  font-family: Roboto, sans-serif;
   border-color: #ccd7e6;
   /*.altBackColor;
 	.altBackBorderColor;*/
 
 }
 .webix_el_select select {
-  font-family: Helvetica, Verdana;
+  font-family: Roboto, sans-serif;
   border-color: #dadee0;
 }
 .webix_el_checkbox input {
@@ -8744,7 +8744,7 @@ div.webix_inp_static,
 .webix_el_counter .webix_inp_counter_value {
   width: 42px;
   background: #ffffff;
-  font-family: Helvetica, Verdana;
+  font-family: Roboto, sans-serif;
   border-color: #ccd7e6;
   /*.altBackColor;
 	.altBackBorderColor;*/
@@ -8770,8 +8770,8 @@ div.webix_inp_static,
   background: #ffffff;
 }
 .webix_all_tabs .webix_item_tab {
-  font-family: Helvetica, Verdana;
-  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
   font-weight: 500;
   color: #1ca1c1;
   letter-spacing: 0px;
@@ -8877,7 +8877,7 @@ div.webix_inp_static,
 }
 .webix_el_tabbar .webixtype_iconTop .webix_item_tab,
 .webix_el_tabbar .webixtype_image .webix_item_tab {
-  font-size: 14px;
+  font-size: 16px;
   padding-top: 2px;
   padding-bottom: 2px;
 }
@@ -8888,7 +8888,7 @@ div.webix_inp_static,
 .webix_el_tabbar .webixtype_iconTop .webix_img_btn_text,
 .webix_el_tabbar .webixtype_image .webix_img_btn_text {
   bottom: 0px;
-  font-size: 14px;
+  font-size: 16px;
 }
 .webix_el_tabbar .webixtype_iconTop .webix_item_tab.webix_selected,
 .webix_el_tabbar .webixtype_image .webix_item_tab.webix_selected {
@@ -9065,7 +9065,7 @@ div.webix_inp_static,
   left: 3px;
 }
 .webix_section > .webix_template {
-  font-family: Helvetica, Verdana;
+  font-family: Roboto, sans-serif;
   font-size: 12px;
   font-weight: 400;
   color: #475466;
@@ -9131,8 +9131,8 @@ div.webix_inp_static,
 .webix_cal_icon,
 .webix_cal_time,
 .webix_cal_month_name {
-  font-family: Helvetica, Verdana;
-  font-size: 14px;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
   font-weight: 400;
   color: #475466;
   letter-spacing: 0.2px;
@@ -9149,8 +9149,8 @@ div.webix_inp_static,
 .webix_cal_month_name,
 .webix_time_header .webix_cal_hours,
 .webix_time_header .webix_cal_minutes {
-  font-family: Helvetica, Verdana;
-  font-size: 14px;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
   font-weight: 500;
   color: #313131;
   letter-spacing: 0.2px;
@@ -9234,7 +9234,7 @@ div.webix_inp_static,
   background-color: #1992af;
 }
 .webix_cal_body .webix_cal_block {
-  font-family: Helvetica, Verdana;
+  font-family: Roboto, sans-serif;
   font-size: 12px;
   font-weight: 400;
   color: #475466;
@@ -9633,8 +9633,8 @@ div.webix_inp_static,
 .webix_inp_top_label,
 legend.webix_forminput_label,
 .webix_el_label .webix_el_box {
-  font-family: Helvetica, Verdana;
-  font-size: 14px;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
   font-weight: 500;
   color: #313131;
   letter-spacing: 0.2px;
@@ -9659,8 +9659,8 @@ legend.webix_forminput_label,
   width: 24px;
 }
 .webix_dbllist .bottom_label {
-  font-family: Helvetica, Verdana;
-  font-size: 14px;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
   font-weight: 400;
   color: #94a1b3;
   letter-spacing: 0.2px;
@@ -9685,7 +9685,7 @@ legend.webix_forminput_label,
 .webix_chart .webix_canvas_text,
 .webix_chart .webix_axis_title_x,
 .webix_chart .webix_axis_title_y {
-  font-family: Helvetica, Verdana;
+  font-family: Roboto, sans-serif;
   font-size: 12px;
   font-weight: 400;
   color: #475466;

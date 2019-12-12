@@ -8,7 +8,10 @@ class PositionSchema extends Schema {
         this.create('positions', (table) => {
             table.increments()
             table.string('SrlNum', 32).notNullable()
+            table.enu('tyReg', ['HC', 'IT']).notNullable()
             table.string('Address', 100).notNullable()
+            table.string('City', 30).notNullable()
+            table.string('tlc', 3).notNullable()
             table.decimal('lat', 9, 6).notNullable()
             table.decimal('lng', 9, 6).notNullable()
             table.timestamps()
